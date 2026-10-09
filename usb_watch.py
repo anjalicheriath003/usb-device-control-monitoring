@@ -21,6 +21,19 @@ def matches(rule, vendor, product):
     return rule["vendor_id"] == vendor and rule["product_id"] == product
 
 
+def block_device(device):
+    """Block a USB device by writing 0 to its 'authorized' file."""
+    path = device.sys_path + "/authorized"
+    try:
+        with open(path, "w") as f:
+            f.write("0")
+        return "device blocked by the kernel"
+    except PermissionError:
+        return "FAILED - run the script with sudo"
+    except OSError as error:
+        return "FAILED - " + str(error)
+
+
 def decide(policy, vendor, product):
     """Return the decision and the reason for one device."""
     for rule in policy["blocklist"]:
@@ -53,6 +66,10 @@ try:
 
             decision, reason = decide(policy, vendor, product)
             print("   DECISION     :", decision, "-", reason)
+
+            if decision == "BLOCKED":
+                result = block_device(device)
+                print("   ACTION       :", result)
         elif device.action == "remove":
             print("USB REMOVED:", device.sys_name)
 except KeyboardInterrupt:
