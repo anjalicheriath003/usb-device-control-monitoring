@@ -1,5 +1,10 @@
 import json
+import os
+from datetime import datetime
+
 import pyudev
+
+LOG_FILE = "logs/usb_events.log"
 
 
 def read_attr(device, name):
@@ -14,6 +19,15 @@ def load_policy():
     """Read the allowlist and blocklist from policy.json."""
     with open("policy.json") as f:
         return json.load(f)
+
+
+def log_event(event, **details):
+    """Save one event, with the current time, as a line in the log file."""
+    record = {"time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "event": event}
+    record.update(details)
+    os.makedirs("logs", exist_ok=True)
+    with open(LOG_FILE, "a") as f:
+        f.write(json.dumps(record) + "\n")
 
 
 def matches(rule, vendor, product):
@@ -51,26 +65,40 @@ monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem="usb", device_type="usb_device")
 
 print("Watching for USB devices... (press Ctrl+C to stop)")
+log_event("MONITOR_STARTED")
 
 try:
     for device in iter(monitor.poll, None):
         if device.action == "add":
-            vendor = read_attr(device, "idVendor")
-            product = read_attr(device, "idProduct")
-            print("USB CONNECTED:", device.sys_name)
-            print("   Vendor ID    :", vendor)
-            print("   Product ID   :", product)
-            print("   Manufacturer :", read_attr(device, "manufacturer"))
-            print("   Product      :", read_attr(device, "product"))
-            print("   Serial       :", read_attr(device, "serial"))
+            info = {
+                "port": device.sys_name,
+                "vendor_id": read_attr(device, "idVendor"),
+                "product_id": read_attr(device, "idProduct"),
+                "manufacturer": read_attr(device, "manufacturer"),
+                "product": read_attr(device, "product"),
+                "serial": read_attr(device, "serial"),
+            }
+            print("USB CONNECTED:", info["port"])
+            print("   Vendor ID    :", info["vendor_id"])
+            print("   Product ID   :", info["product_id"])
+            print("   Manufacturer :", info["manufacturer"])
+            print("   Product      :", info["product"])
+            print("   Serial       :", info["serial"])
+            log_event("DEVICE_CONNECTED", **info)
 
-            decision, reason = decide(policy, vendor, product)
+            decision, reason = decide(policy, info["vendor_id"], info["product_id"])
             print("   DECISION     :", decision, "-", reason)
 
             if decision == "BLOCKED":
                 result = block_device(device)
                 print("   ACTION       :", result)
+                log_event("DEVICE_BLOCKED", reason=reason, action=result, **info)
+            else:
+                log_event("DEVICE_ALLOWED", reason=reason, **info)
+
         elif device.action == "remove":
             print("USB REMOVED:", device.sys_name)
+            log_event("DEVICE_REMOVED", port=device.sys_name)
 except KeyboardInterrupt:
     print("\nStopped.")
+    log_event("MONITOR_STOPPED")

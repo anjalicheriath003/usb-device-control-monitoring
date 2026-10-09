@@ -1,0 +1,5 @@
+{"time": "2026-10-09 22:53:58", "event": "MONITOR_STARTED"}
+{"time": "2026-10-09 22:54:03", "event": "DEVICE_REMOVED", "port": "1-2"}
+{"time": "2026-10-09 22:54:10", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "10c4", "product_id": "0005", "manufacturer": "YSPRINGTECH", "product": "USB OPTICAL MOUSE", "serial": "(none)"}
+{"time": "2026-10-09 22:54:10", "event": "DEVICE_ALLOWED", "reason": "in allowlist: My YSPRINGTECH mouse", "port": "1-2", "vendor_id": "10c4", "product_id": "0005", "manufacturer": "YSPRINGTECH", "product": "USB OPTICAL MOUSE", "serial": "(none)"}
+{"time": "2026-10-09 22:54:16", "event": "MONITOR_STOPPED"}
