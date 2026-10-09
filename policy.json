@@ -1,0 +1,8 @@
+{
+  "allowlist": [
+    {"vendor_id": "10c4", "product_id": "0005", "description": "My YSPRINGTECH mouse"}
+  ],
+  "blocklist": [
+    {"vendor_id": "1234", "product_id": "5678", "description": "Example banned device"}
+  ]
+}
