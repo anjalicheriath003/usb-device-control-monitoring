@@ -38,3 +38,13 @@
 {"time": "2026-10-10 22:35:35", "event": "FILE_MOVED", "old_file": "audit_test/record_1.txt", "file": "audit_test/renamed.txt", "user": "kali"}
 {"time": "2026-10-10 22:35:55", "event": "FILE_DELETED", "file": "audit_test/record_2.txt", "user": "kali"}
 {"time": "2026-10-10 22:36:04", "event": "TRANSFER_SUMMARY", "message": "15 files written to USB (441 bytes) by 'kali'", "files": 15, "bytes": 441, "user": "kali"}
+{"time": "2026-10-10 22:43:55", "event": "MONITOR_STARTED"}
+{"time": "2026-10-10 22:44:35", "event": "DEVICE_REMOVED", "port": "1-2"}
+{"time": "2026-10-10 22:44:41", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
+{"time": "2026-10-10 22:44:41", "event": "DEVICE_ALLOWED", "reason": "in allowlist: My DIGITEK pen drive", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
+{"time": "2026-10-10 22:44:48", "event": "MONITOR_STOPPED"}
+{"time": "2026-10-10 22:48:08", "event": "MONITOR_STARTED"}
+{"time": "2026-10-10 22:48:12", "event": "DEVICE_REMOVED", "port": "1-2"}
+{"time": "2026-10-10 22:48:19", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
+{"time": "2026-10-10 22:48:19", "event": "DEVICE_BLOCKED", "reason": "SPOOF SUSPECTED: IDs match 'My DIGITEK pen drive' but serial 0718361110626126583 is not the approved serial 0718361110626126999", "action": "device blocked by the kernel", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
+{"time": "2026-10-10 22:48:22", "event": "MONITOR_STOPPED"}

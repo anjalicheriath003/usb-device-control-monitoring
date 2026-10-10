@@ -1,4 +1,3 @@
-
 import json
 import os
 from datetime import datetime
@@ -32,9 +31,16 @@ def log_event(event, **details):
     os.chmod(LOG_FILE, 0o666)
 
 
-def matches(rule, vendor, product):
+def ids_match(rule, info):
     """True if a rule has the same Vendor ID and Product ID as the device."""
-    return rule["vendor_id"] == vendor and rule["product_id"] == product
+    return rule["vendor_id"] == info["vendor_id"] and rule["product_id"] == info["product_id"]
+
+
+def serial_matches(rule, info):
+    """True if the rule has no serial, or the serial is the same as the device's."""
+    if "serial" not in rule:
+        return True
+    return rule["serial"] == info["serial"]
 
 
 def block_device(device):
@@ -50,14 +56,24 @@ def block_device(device):
         return "FAILED - " + str(error)
 
 
-def decide(policy, vendor, product):
+def decide(policy, info):
     """Return the decision and the reason for one device."""
     for rule in policy["blocklist"]:
-        if matches(rule, vendor, product):
+        if ids_match(rule, info):
             return "BLOCKED", "in blocklist: " + rule["description"]
+
+    spoofed_rule = None
     for rule in policy["allowlist"]:
-        if matches(rule, vendor, product):
-            return "ALLOWED", "in allowlist: " + rule["description"]
+        if ids_match(rule, info):
+            if serial_matches(rule, info):
+                return "ALLOWED", "in allowlist: " + rule["description"]
+            spoofed_rule = rule
+
+    if spoofed_rule is not None:
+        return "BLOCKED", ("SPOOF SUSPECTED: IDs match '" + spoofed_rule["description"]
+                           + "' but serial " + info["serial"]
+                           + " is not the approved serial " + spoofed_rule["serial"])
+
     return "BLOCKED", "not in allowlist (unknown device)"
 
 
@@ -88,7 +104,7 @@ try:
             print("   Serial       :", info["serial"])
             log_event("DEVICE_CONNECTED", **info)
 
-            decision, reason = decide(policy, info["vendor_id"], info["product_id"])
+            decision, reason = decide(policy, info)
             print("   DECISION     :", decision, "-", reason)
 
             if decision == "BLOCKED":
