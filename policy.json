@@ -1,6 +1,7 @@
 {
   "allowlist": [
-    {"vendor_id": "10c4", "product_id": "0005", "description": "My YSPRINGTECH mouse"}
+    {"vendor_id": "10c4", "product_id": "0005", "description": "My YSPRINGTECH mouse"},
+    {"vendor_id": "048d", "product_id": "1234", "serial": "0718361110626126583", "description": "My DIGITEK pen drive"}
   ],
   "blocklist": [
     {"vendor_id": "1234", "product_id": "5678", "description": "Example banned device"}

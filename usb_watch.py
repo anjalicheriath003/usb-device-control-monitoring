@@ -1,3 +1,4 @@
+
 import json
 import os
 from datetime import datetime
@@ -28,6 +29,7 @@ def log_event(event, **details):
     os.makedirs("logs", exist_ok=True)
     with open(LOG_FILE, "a") as f:
         f.write(json.dumps(record) + "\n")
+    os.chmod(LOG_FILE, 0o666)
 
 
 def matches(rule, vendor, product):

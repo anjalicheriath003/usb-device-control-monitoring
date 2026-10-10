@@ -3,3 +3,38 @@
 {"time": "2026-10-09 22:54:10", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "10c4", "product_id": "0005", "manufacturer": "YSPRINGTECH", "product": "USB OPTICAL MOUSE", "serial": "(none)"}
 {"time": "2026-10-09 22:54:10", "event": "DEVICE_ALLOWED", "reason": "in allowlist: My YSPRINGTECH mouse", "port": "1-2", "vendor_id": "10c4", "product_id": "0005", "manufacturer": "YSPRINGTECH", "product": "USB OPTICAL MOUSE", "serial": "(none)"}
 {"time": "2026-10-09 22:54:16", "event": "MONITOR_STOPPED"}
+{"time": "2026-10-10 22:34:33", "event": "AUDIT_STARTED", "path": "/mnt/usb", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_1.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_1.txt", "size": 29, "sha256": "0e44750d94313b2e1c56015ce69b39629e15b7ac1d4c658ab9f653f4b1d9eafa", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_2.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_2.txt", "size": 29, "sha256": "87e63afba0ccb01ac37cfccaec7c5a4252b469678172276a4322d5de3762aa70", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_3.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_3.txt", "size": 29, "sha256": "fcadf0abb75e0cb72fafc3e8af7bd3466b0549e4944b69163687c0ec4d9946c4", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_4.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_4.txt", "size": 29, "sha256": "0099c031356ab263cc47485279af45e61b4803a22181a9745a3b7467557d996c", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_5.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_5.txt", "size": 29, "sha256": "17792a355ef4545d781b5f6f091b9bf872d3f0bae35caa2a8e714a8a4c4a25f8", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_6.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_6.txt", "size": 29, "sha256": "f686e0ad49591f142b86ebd47371155484f969a3e9bd5bffa59e62bfa9ed634d", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_7.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_7.txt", "size": 29, "sha256": "7f52686259b6951daf1d4ceeac3c347c777707f880d5f90555380788c043f78e", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_8.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_8.txt", "size": 29, "sha256": "f0d3d293982b30f56a87bff198d1385484f0189e27683a0730db84dea172a980", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_9.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_9.txt", "size": 29, "sha256": "3076a8d9d159c12896fb0ede24c6e23bdb21ba0bbb0a64e8790f2c661ac0047f", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_10.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_10.txt", "size": 30, "sha256": "1336be74e5c2d4e2808a7a1bfec74a40ebff108274e1dddffa65b40a61471a68", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "LARGE_TRANSFER", "message": "10 files copied to USB in under 60s by 'kali' - possible data theft!", "files": 10, "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_11.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_11.txt", "size": 30, "sha256": "c512fa0a8e89d524a71063e383282efdb6207ee215af1c3b413def871f68cf70", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_12.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_12.txt", "size": 30, "sha256": "458445db963221978fc4ee57aa14f9e353459d64c158447829821a2658308988", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_13.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_13.txt", "size": 30, "sha256": "a04cbad624c4b2592de09f04480511980480d458c75385c358faba05aabdabe8", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_14.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_14.txt", "size": 30, "sha256": "52597667834f0a1c9a6ee162b6bf29b5c2a9cde08bf5649cd50a53e90d5f742b", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_CREATED", "file": "audit_test/record_15.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:23", "event": "FILE_WRITTEN", "file": "audit_test/record_15.txt", "size": 30, "sha256": "7e87d8adb8458e495712a5790f5589d841816358b5f6bf225d7e8d7e5e51bed8", "user": "kali"}
+{"time": "2026-10-10 22:35:35", "event": "FILE_MOVED", "old_file": "audit_test/record_1.txt", "file": "audit_test/renamed.txt", "user": "kali"}
+{"time": "2026-10-10 22:35:55", "event": "FILE_DELETED", "file": "audit_test/record_2.txt", "user": "kali"}
+{"time": "2026-10-10 22:36:04", "event": "TRANSFER_SUMMARY", "message": "15 files written to USB (441 bytes) by 'kali'", "files": 15, "bytes": 441, "user": "kali"}
