@@ -48,3 +48,8 @@
 {"time": "2026-10-10 22:48:19", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
 {"time": "2026-10-10 22:48:19", "event": "DEVICE_BLOCKED", "reason": "SPOOF SUSPECTED: IDs match 'My DIGITEK pen drive' but serial 0718361110626126583 is not the approved serial 0718361110626126999", "action": "device blocked by the kernel", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583"}
 {"time": "2026-10-10 22:48:22", "event": "MONITOR_STOPPED"}
+{"time": "2026-10-14 17:38:52", "event": "MONITOR_STARTED"}
+{"time": "2026-10-14 17:39:08", "event": "DEVICE_REMOVED", "port": "1-2"}
+{"time": "2026-10-14 17:39:14", "event": "DEVICE_CONNECTED", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583", "interfaces": ["08"]}
+{"time": "2026-10-14 17:39:14", "event": "DEVICE_ALLOWED", "reason": "in allowlist: My DIGITEK pen drive", "port": "1-2", "vendor_id": "048d", "product_id": "1234", "manufacturer": "USB", "product": "Disk 2.0", "serial": "0718361110626126583", "interfaces": ["08"]}
+{"time": "2026-10-14 17:39:16", "event": "MONITOR_STOPPED"}

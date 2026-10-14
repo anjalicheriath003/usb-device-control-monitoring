@@ -5,5 +5,11 @@
   ],
   "blocklist": [
     {"vendor_id": "1234", "product_id": "5678", "description": "Example banned device"}
+  ],
+  "known_attack_hardware": [
+    {"vendor_id": "16d0", "product_id": "0753", "description": "Digispark ATtiny85 (keystroke injection board)"},
+    {"vendor_id": "16c0", "product_id": "0483", "description": "Teensy (common BadUSB platform)"},
+    {"vendor_id": "2341", "product_id": "8036", "description": "Arduino Leonardo (can act as a keyboard)"},
+    {"vendor_id": "1b4f", "product_id": "9206", "description": "SparkFun Pro Micro (can act as a keyboard)"}
   ]
 }
